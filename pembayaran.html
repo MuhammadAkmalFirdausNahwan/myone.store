@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja</title>
+    <script>
+
+        function processPayment() {
+            const paymentMethod = document.getElementById("payment-method").value;
+            const totalAmount = calculateTotal();
+            
+            if (paymentMethod === "") {
+                alert("Silakan pilih metode pembayaran.");
+                return;
+            }
+
+            if (totalAmount <= 0) {
+                alert("Keranjang belanja Anda kosong.");
+                return;
+            }
+
+           
+            const paymentUrl = `https://lynk.id/payme/azzaaa=${paymentMethod}&amount=${totalAmount}`;
+            window.location.href = paymentUrl};
+
+        
+        function calculateTotal() {
+             return 100000; 
+        }
+
+        function addPaymentMethods() {
+            const paymentMethods = [
+                { value: 'dana', text: 'Dana (No: 085222433082)' },
+                { value: 'bca', text: 'BCA (No Rekening: 3480583255)' }
+            ];
+
+            const paymentSelect = document.getElementById("payment-method");
+            paymentMethods.forEach(method => {
+                const option = document.createElement("option");
+                option.value = method.value;
+                option.text = method.text;
+                paymentSelect.appendChild(option);
+            });
+        }
+        
+        window.onload = function() {
+            addPaymentMethods();
+        };
+    </script>
+</head>
+<body>
+    <div id="cart-container">
+        <h3>Keranjang Belanja</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total">Total: Rp 0 (0 item)</div>
+    </div>
+    <select id="payment-method">
+        <option value="">Pilih metode pembayaran</option>
+    </select>
+    <button onclick="processPayment()">Bayar</button>
+    <footer>
+        <p>&copy; 2023 Toko Online. Semua hak dilindungi.</p>
+    </footer>
+</body>
+</html>

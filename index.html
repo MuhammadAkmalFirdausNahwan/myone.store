@@ -1,0 +1,54 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAA STORE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ZAA STORE</h1>
+        <nav>
+            <a href="#">Beranda</a>
+            <a href="#">Produk</a>
+            <a href="#">Kontak</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="product-card">
+            <img src="Assassins Creed Black Flag.jpg" alt="Produk 1">
+            <h3>Produk 1</h3>
+            <p>Game Assassins PS4</p>
+            <p>Harga: Rp 450.000</p>
+            <button class="btn" onclick="addToCart('Produk 1', 450000)">Beli Sekarang</button>
+        </div>
+        <div class="product-card">
+            <img src="Dragon Ball FighterZ.jpg" alt="Produk 2">
+            <h3>Produk 2</h3>
+            <p>Game Dragon Ball PS4</p>
+            <p>Harga: Rp 730.000</p>
+            <button class="btn" onclick="addToCart('Produk 2', 730000)">Beli Sekarang</button>
+        </div>
+        <div class="product-card">
+            <img src="Horizon Zero Dawn.jpg" alt="Produk 3">
+            <h3>Produk 3</h3>
+            <p>Gmae Horizon Zero PS4</p>
+            <p>Harga: Rp 450.000</p>
+            <button class="btn" onclick="addToCart('Produk 3', 450000)">Beli Sekarang</button>
+           </div>
+    </div>
+    <div id="cart-container">
+        <h3>Keranjang Belanja</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total">Total: Rp 0 (0 item)</div>
+    </div>
+    <select id="payment-method">
+        <option value="">Pilih metode pembayaran</option>
+    </select>
+    <button onclick="processPayment()">Bayar</button>
+    <footer>
+        <p>&copy; 2023 Toko Online Kami. Semua hak dilindungi.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
